@@ -6,13 +6,16 @@ const incrementBtnRef = document.querySelector(
 );
 const counterValue = document.querySelector("#value");
 
+let leadToTheNumberCounterValue = Number(counterValue.textContent);
+
 decrementBtnRef.addEventListener("click", decrementCounterOnClick);
 incrementBtnRef.addEventListener("click", incrementCounterOnClick);
 
 function decrementCounterOnClick(event) {
-  counterValue.textContent += event.target.textContent;
+  leadToTheNumberCounterValue += Number(event.target.textContent);
+  counterValue.textContent = leadToTheNumberCounterValue;
 }
-
 function incrementCounterOnClick(event) {
-  counterValue.textContent += event.target.textContent;
+  leadToTheNumberCounterValue += Number(event.target.textContent);
+  counterValue.textContent = leadToTheNumberCounterValue;
 }
